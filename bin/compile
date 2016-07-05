@@ -60,8 +60,8 @@ stack setup |& indent
 
 echo '-----> Installing app'
 mkdir -p "$cache/.stack-work"
-stack clean |& indent
 ln -s "$cache/.stack-work" "$build"
+stack clean |& indent
 stack build |& indent
 cp $(stack path --local-install-root)/bin/* "$bin"
 rm -r "$build/.stack-work"
